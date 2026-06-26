@@ -1,0 +1,65 @@
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scroll Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* Floating Animation for Hero Image */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Blob Background */
+.blob-bg {
+  position: absolute;
+  z-index: -1;
+  filter: blur(60px);
+  opacity: 0.4;
+  border-radius: 50%;
+  background: linear-gradient(to right, #e3000f, #ff4d4d);
+}
+
+/* FAQ Accordion Transition */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease-out,
+    opacity 0.3s ease-out;
+  opacity: 0;
+}
+.faq-answer.open {
+  opacity: 1;
+}
